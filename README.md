@@ -1,12 +1,8 @@
-========================================
-MOTORPH PAYROLL SYSTEM - README
-========================================
+# MotorPH Payroll System (Phase 1)
 
 A Java-based payroll management system developed for MotorPH, designed to handle employee information, attendance tracking, and salary calculations including statutory deductions.
 
-------------------------------------------
-PROJECT OVERVIEW
-------------------------------------------
+## Project Overview
 
 The MotorPH Payroll System fulfills Phase 1 requirements of MotorPH's plan to develop an end-to-end inventory and payroll system. This initial phase covers:
 
@@ -15,19 +11,16 @@ The MotorPH Payroll System fulfills Phase 1 requirements of MotorPH's plan to de
 3. Calculation of gross weekly salary
 4. Calculation of net weekly salary after applying statutory deductions
 
-------------------------------------------
-SYSTEM REQUIREMENTS
-------------------------------------------
+## System Requirements
 
 - Java Development Kit (JDK) 8 or higher
 - NetBeans IDE (recommended: version 8.2 or higher)
 - Minimum 512MB RAM
 - 100MB free disk space
 
-------------------------------------------
-PROJECT STRUCTURE
-------------------------------------------
+## Project Structure
 
+```
 MotorPH-PayrollSystem/
 │
 ├── src/                           # Source code directory
@@ -45,43 +38,40 @@ MotorPH-PayrollSystem/
 │
 └── docs/
     └── MotorPH_PayrollSystem.txt  # System documentation
+```
 
-------------------------------------------
-SETUP INSTRUCTIONS
-------------------------------------------
+## Setup Instructions
 
 There are two ways to set up and run this project. Choose the method that works best for you:
 
-METHOD 1: QUICK SETUP - DIRECT FILE OPENING
--------------------------------------------
+### Method 1: Quick Setup - Direct File Opening
 
 This is the simplest method for reviewing or running the code:
 
-1. Download and Extract Files
+1. **Download and Extract Files**
    - Download the ZIP file containing all project files
    - Extract the ZIP file to a location of your choice
 
-2. Open Main.java Directly in NetBeans
+2. **Open Main.java Directly in NetBeans**
    - Launch NetBeans
    - Go to File > Open File
    - Navigate to the extracted files and open Main.java
    - NetBeans should automatically detect other related files
 
-3. Run the File
+3. **Run the File**
    - Right-click in the Main.java editor window
    - Select "Run File" or press Shift+F6
    - The application should start with a login screen
 
-METHOD 2: PROJECT SETUP IN NETBEANS
------------------------------------
+### Method 2: Project Setup in NetBeans
 
 This method creates a proper NetBeans project structure:
 
-1. Download and Extract Files
+1. **Download and Extract Files**
    - Download the ZIP file containing all project files
    - Extract the ZIP file to a location of your choice
 
-2. Create a New Java Project in NetBeans
+2. **Create a New Java Project in NetBeans**
    - Launch NetBeans
    - Go to File > New Project
    - Select "Java Application" from the Java category
@@ -91,32 +81,28 @@ This method creates a proper NetBeans project structure:
    - Uncheck "Create Main Class" (since you already have a Main.java)
    - Click Finish
 
-3. Copy the Files to Your Project
+3. **Copy the Files to Your Project**
    - Copy all .java files to the src folder of your NetBeans project
    - Copy all .txt files to the root directory of your project (not in src)
 
-4. Fix the Main Class Configuration
+4. **Fix the Main Class Configuration**
    - Right-click on your project in NetBeans
    - Select "Properties"
    - Go to "Run"
    - Set the "Main Class" field to `Main` (not any package name, just `Main`)
    - Click OK to save the changes
 
-5. Run the Project
+5. **Run the Project**
    - Right-click on the project
    - Select "Run" or press F6
 
-------------------------------------------
-LOGIN CREDENTIALS
-------------------------------------------
+### Login Credentials
 
 The application will start with a login screen. Use the default credentials:
-- Username: admin
-- Password: admin123
+- Username: `1`
+- Password: `1`
 
-------------------------------------------
-TROUBLESHOOTING
-------------------------------------------
+### Troubleshooting
 
 If you encounter a "Main class not found" error:
 - Double-check that the Main Class in Properties is set to exactly `Main`
@@ -126,56 +112,65 @@ If you encounter a "Main class not found" error:
 If you have file not found errors:
 - Make sure all .txt files are in the correct location relative to how they're accessed in the code
 
-------------------------------------------
-FEATURES
-------------------------------------------
+### Expected File Structure
 
-1. Login System
+The system expects certain data files to be present in the project directory:
+
+- `login_credentials.txt` - Contains username and password pairs
+- `employee_data.txt` - Contains employee information
+- `attendance_[date].txt` - Contains attendance records for specific weeks
+
+If these files are not found, the system will create sample files automatically.
+
+## Default Login Credentials
+
+- Username: `1`
+- Password: `1`
+
+## Features
+
+1. **Login System**
    - Secure access with username/password
    - Three attempts allowed before system exit
 
-2. Employee Information
+2. **Employee Information**
    - View basic employee details
    - Employee number, name, birthday
 
-3. Attendance Tracking
+3. **Attendance Tracking**
    - Weekly view of clock-in/out times
    - Regular and overtime hours calculation
    - Late and undertime tracking
 
-4. Payroll Calculation
+4. **Payroll Calculation**
    - Regular and overtime pay computation
    - Statutory deductions (SSS, PhilHealth, Pag-IBIG, Withholding Tax)
    - Late penalty calculation
    - Final net salary calculation
 
-------------------------------------------
-STATUTORY DEDUCTIONS
-------------------------------------------
+## Statutory Deductions
 
 The system implements the following Philippine statutory deductions:
 
-1. SSS Contributions
+1. **SSS Contributions**
    - Based on monthly salary brackets
    - Prorated for weekly calculations
 
-2. PhilHealth Contributions
+2. **PhilHealth Contributions**
    - 3% of monthly salary (equal share between employer and employee)
    - Minimum: PHP 300 (salary ≤ PHP 10,000)
    - Maximum: PHP 1,800 (salary ≥ PHP 60,000)
 
-3. Pag-IBIG Contributions
+3. **Pag-IBIG Contributions**
    - 1% for salaries up to PHP 1,500
    - 2% for salaries over PHP 1,500
    - Maximum contribution: PHP 100
 
-4. Withholding Tax
+4. **Withholding Tax**
    - Progressive tax calculation based on taxable income
    - Applied after all other deductions
 
-------------------------------------------
-DEVELOPMENT NOTES
-------------------------------------------
+## Development Notes
 
 - The system includes a 10-minute grace period for employee punctuality
 - Late penalties are calculated as 10% of regular pay multiplied by the proportion of late time
@@ -183,15 +178,14 @@ DEVELOPMENT NOTES
 - Regular work hours are 8:00 AM to 5:00 PM with a 1-hour lunch break
 - Standard work week is 40 hours, with overtime calculated beyond that
 
-------------------------------------------
-CONTRIBUTORS
-------------------------------------------
+## Testing
 
-Kevin Bruguier
-Ameerah Mohamad
+Sample data is included to test all system functionality:
+- Multiple employees with varying hourly rates
+- Sample attendance records with both regular and lateness scenarios
+- Different salary brackets to test all statutory deduction calculations
 
-------------------------------------------
-LICENSE
-------------------------------------------
+
+## License
 
 This project was developed as an educational exercise and is not licensed for commercial use.
